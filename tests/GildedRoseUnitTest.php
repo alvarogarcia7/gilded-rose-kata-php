@@ -73,4 +73,52 @@ class GildedRoseUnitTest extends TestCase
         $gildedRose->updateQuality();
         $this->assertSame(80, $items[0]->quality);
     }
+
+    public function testQualityNeverNegative(): void
+    {
+        $items = [new Item('normal', 10, 0)];
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+        $this->assertSame(0, $items[0]->quality);
+    }
+
+    public function testQualityNeverMoreThanFifty(): void
+    {
+        $items = [new Item('Aged Brie', 10, 50)];
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+        $this->assertSame(50, $items[0]->quality);
+    }
+
+    public function testSellInDecreasesByOne(): void
+    {
+        $items = [new Item('normal', 10, 20)];
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+        $this->assertSame(9, $items[0]->sellIn);
+    }
+
+    public function testSellInDoesNotDecreaseForSulfuras(): void
+    {
+        $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 80)];
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+        $this->assertSame(0, $items[0]->sellIn);
+    }
+
+    public function testQualityOfAgedBrieIncreasesTwiceAfterSellIn(): void
+    {
+        $items = [new Item('Aged Brie', 0, 20)];
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+        $this->assertSame(22, $items[0]->quality);
+    }
+
+    public function testQualityOfNormalItemDoesNotGoBelowZero(): void
+    {
+        $items = [new Item('normal', 0, 0)];
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+        $this->assertSame(0, $items[0]->quality);
+    }
 }
