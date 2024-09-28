@@ -12,5 +12,6 @@ class ItemTest extends TestCase
     {
         $item = new Item('normal', 10, 20);
         $this->assertSame('normal, 10, 20', (string)$item);
+        $this->assertTrue(is_string((string)$item));
     }
 }

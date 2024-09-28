@@ -1,33 +1,5 @@
-<?php
-
-declare(strict_types=1);
-
-namespace Kata\Test;
-
-use Kata\Item;
-use PHPUnit\Framework\TestCase;
-
-class ItemTest extends TestCase
-{
-    public function testToString(): void
-    {
-        $item = new Item('normal', 10, 20);
-        $this->assertSame('normal, 10, 20', (string) $item);
-    }
-}Escaped mutants:
+Escaped mutants:
 ================
-
-1) /app/src/Item.php:18    [M] CastString
-
-@@ @@
-     }
-     public function __toString(): string
-     {
--        return (string) "{$this->name}, {$this->sellIn}, {$this->quality}";
-+        return "{$this->name}, {$this->sellIn}, {$this->quality}";
-     }
- }
-
 
 Timed Out mutants:
 ==================

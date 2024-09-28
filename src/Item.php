@@ -15,6 +15,6 @@ class Item implements \Stringable
 
     public function __toString(): string
     {
-        return (string) "{$this->name}, {$this->sellIn}, {$this->quality}";
+        return "{$this->name}, {$this->sellIn}, {$this->quality}";
     }
 }
