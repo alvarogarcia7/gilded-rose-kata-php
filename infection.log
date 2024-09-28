@@ -1,0 +1,23 @@
+Escaped mutants:
+================
+
+1) /app/src/Item.php:18    [M] CastString
+
+@@ @@
+     }
+     public function __toString(): string
+     {
+-        return (string) "{$this->name}, {$this->sellIn}, {$this->quality}";
++        return "{$this->name}, {$this->sellIn}, {$this->quality}";
+     }
+ }
+
+
+Timed Out mutants:
+==================
+
+Skipped mutants:
+================
+
+Not Covered mutants:
+====================
