@@ -1,0 +1,14 @@
+[0] -> normal, 0, 10
+[1] -> normal, -10, 0
+[2] -> Aged Brie, 0, 30
+[3] -> Backstage passes to a TAFKAL80ETC concert, 5, 35
+[4] -> Backstage passes to a TAFKAL80ETC concert, -1, 0
+[5] -> Backstage passes to a TAFKAL80ETC concert, -6, 0
+[6] -> Backstage passes to a TAFKAL80ETC concert, -10, 0
+[7] -> Sulfuras, Hand of Ragnaros, 0, 80
+[8] -> normal, 0, 0
+[9] -> Aged Brie, 0, 50
+[10] -> normal, 0, 10
+[11] -> Sulfuras, Hand of Ragnaros, 0, 80
+[12] -> Aged Brie, -10, 40
+[13] -> normal, -10, 0
